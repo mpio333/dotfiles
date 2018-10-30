@@ -11,7 +11,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'Raimondi/delimitMate'
-Plugin 'itchyny/lightline.vim'
+"Plugin 'itchyny/lightline.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'chrisbra/unicode.vim'
 Plugin 'pangloss/vim-javascript'
@@ -29,6 +29,8 @@ Plugin 'JulesWang/css.vim'
 Plugin 'othree/html5.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'chr4/nginx.vim'
+Plugin 'chr4/sslsecure.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -105,8 +107,8 @@ set belloff=all
 "   let base16colorspace=256
 "   source ~/.vimrc_background
 " endif
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
+"let &t_ZH="\e[3m"
+"let &t_ZR="\e[23m"
 highlight Comment cterm=italic
 
 " Use deoplete.
@@ -140,7 +142,26 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
+"Ctrl+H-J-K-L to move between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+"Better focus in active split - taken from Greg Hurrel https://github.com/wincent
+if exists('+colorcolumn')
+  autocmd BufEnter,FocusGained,VimEnter,WinEnter * if Should_colorcolumn() | let &l:colorcolumn='+' . join(range(0, 254), ',+') | endif
+  autocmd FocusLost,WinLeave * if Should_colorcolumn() | let &l:colorcolumn=join(range(1, 255), ',') | endif
+endif
+autocmd InsertLeave,VimEnter,WinEnter * if Should_cursorline() | setlocal cursorline | endif
+autocmd InsertEnter,WinLeave * if Should_cursorline() | setlocal nocursorline | endif
+let g:WincentColorColumnBlacklist = ['diff', 'undotree', 'nerdtree', 'qf']
+let g:WincentCursorlineBlacklist = ['command-t']
+let g:WincentMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
+function! Should_colorcolumn() abort
+  return index(g:WincentColorColumnBlacklist, &filetype) == -1
+endfunction
+function! Should_cursorline() abort
+  return index(g:WincentCursorlineBlacklist, &filetype) == -1
+endfunction
