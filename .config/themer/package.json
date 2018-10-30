@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "themer": "^3.1.6",
+    "themer-colors-solarized": "^1.0.3",
+    "themer-kitty": "^1.0.1",
+    "themer-wallpaper-block-wave": "^3.0.3",
+    "themer-wallpaper-octagon": "^3.0.3"
+  },
+  "scripts": {
+    "build": "themer -c themer-colors-solarized -t themer-kitty -t themer-vim -t themer-wallpaper-octagon --themer-wallpaper-octagon-size 1920x1080 -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 1920x1080 -o gen"
+  }
+}
