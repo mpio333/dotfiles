@@ -4,7 +4,7 @@ Dotfiles for Arch install with i3-gaps, i3blocks, kitty, zsh, tmux, ranger, neov
 
 ### Prerequisites
 
-Git, neovim, vundle, i3, i3blocks, zsh, tmux, ranger, yarn..
+Git, alacritty, pure (zsh shell), neovim, vundle, i3, i3blocks, zsh, tmux, ranger, yarn..
 
 ### Installing
 
@@ -43,6 +43,17 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 ```
+
+#####GTK & Icon Themes
+
+Managed via lxappearance
+
+```
+sudo pacman -S lxappearance
+```
+
+
+
 ## Authors
 
 * **Fray Zacarias**
