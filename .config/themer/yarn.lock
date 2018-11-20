@@ -120,10 +120,10 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-themer-colors-default@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/themer-colors-default/-/themer-colors-default-1.0.10.tgz#e552fa0438cbecde8028627a71371800a0076822"
-  integrity sha512-hS10/K4UOyj5ptzZ9WokNcnVTfT67Xnid0jcfjsD/ATU+N41V0B5lXFhixfui05pB6p+lM94tN8au+sOHvIwPw==
+themer-colors-one@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/themer-colors-one/-/themer-colors-one-1.0.8.tgz#c9cfbc69418cfb146fdda8648095480036f38402"
+  integrity sha512-IgBamqLL6cV1LZX5vq2C4sdhk8pcGByHSzkm7J8SigE1U4ngCIFcoMoNpFe0crkuv6pUKVXTwHcuKfnY2+pr8Q==
 
 themer-colors-solarized@^1.0.3:
   version "1.0.3"

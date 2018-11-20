@@ -14,23 +14,31 @@ Plugin 'Raimondi/delimitMate'
 "Plugin 'itchyny/lightline.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'chrisbra/unicode.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'StanAngeloff/php.vim'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'wincent/command-t'
+" Plugin 'wincent/command-t'
 Plugin 'Yggdroot/indentLine'
-Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'lumiliet/vim-twig'
 Plugin 'ervandew/supertab'
 Plugin 'JulesWang/css.vim'
-Plugin 'othree/html5.vim'
-Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'chr4/nginx.vim'
 Plugin 'chr4/sslsecure.vim'
+Plugin 'vim-utils/vim-husk'
+Plugin 'chrisbra/Colorizer'
+Plugin 'jacoborus/tender.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'lifepillar/vim-colortemplate'
+Plugin 'rakr/vim-two-firewatch'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'trevordmiller/nova-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -46,8 +54,8 @@ endif
 set encoding=UTF-8
 set fileencoding=utf-8
 syntax on
-set background=light
-colorscheme solarized8
+" set background=dark
+" colorscheme neodark
 
 "highlight Normal ctermbg=NONE guibg=NONE
 
@@ -107,9 +115,6 @@ set belloff=all
 "   let base16colorspace=256
 "   source ~/.vimrc_background
 " endif
-"let &t_ZH="\e[3m"
-"let &t_ZR="\e[23m"
-highlight Comment cterm=italic
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
@@ -132,7 +137,7 @@ set conceallevel=1
 " IndentLines
 let g:indentLine_fileTypeExclude=['help']
 let g:indentLine_bufNameExclude=['NERD_tree.*']
-let g:indentLine_char = '┊'
+"let g:indentLine_char = '│'
 
 "Ruby
 let g:ruby_host_prog = '/home/fzic/.gem/ruby/2.5.0/bin/neovim-ruby-host'
@@ -165,3 +170,21 @@ endfunction
 function! Should_cursorline() abort
   return index(g:WincentCursorlineBlacklist, &filetype) == -1
 endfunction
+
+"Interpret Drupal .theme file as php
+augroup filetypedetect
+  au BufRead,BufNewFile *.theme set filetype=php
+augroup END
+
+" let g:indentLine_concealcursor = 'inc'
+" let g:indentLine_conceallevel = 0
+
+let g:neodark#background = '#202020'
+colorscheme neodark
+" let &t_ZH="\e[3m"
+" let &t_ZR="\e[23m"
+" let &t_ZH="^[[3m"
+" let &t_ZR="^[[23m"
+highlight Comment cterm=italic gui=italic
+hi htmlArg gui=italic cterm=italic
+hi Type    gui=italic cterm=italic
