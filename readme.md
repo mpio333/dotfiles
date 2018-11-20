@@ -43,6 +43,21 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 ```
+
+### GTK and Icon Theme
+
+#####Managed via lxappearance
+
+```
+sudo pacman -S lxappearance
+```
+#####GTK, Shades of Gray (arch)
+https://www.opendesktop.org/p/1244058/
+
+#####Icons, Papirus
+https://www.opendesktop.org/p/1166289/
+**Has harcode tray support
+
 ## Authors
 
 * **Fray Zacarias**
