@@ -1,0 +1,17 @@
+total 64K
+drwxr-xr-x  5 fzic wheel 4.0K Nov 16 13:53 [0m[01;34mbmewburn.vscode-intelephense-client-0.8.8[0m
+drwxr-xr-x  5 fzic wheel 4.0K Nov 16 17:14 [01;34mdaylerees.rainglow-1.5.2[0m
+drwxr-xr-x  6 fzic wheel 4.0K Nov 16 13:50 [01;34mdmitrydorofeev.empty-indent-0.2.0[0m
+drwxr-xr-x  4 fzic wheel 4.0K Nov 16 14:05 [01;34mformulahendry.auto-rename-tag-0.0.15[0m
+drwxr-xr-x  4 fzic wheel 4.0K Nov 17 12:47 [01;34mfzic-theme[0m
+drwxr-xr-x  5 fzic wheel 4.0K Nov 16 14:14 [01;34mgencer.html-slim-scss-css-class-completion-1.1.1[0m
+drwxr-xr-x  5 fzic wheel 4.0K Nov 16 13:50 [01;34mmblode.twig-language-2-0.3.1[0m
+drwxr-xr-x  4 fzic wheel 4.0K Nov 18 15:57 [01;34mmrmlnc.vscode-scss-0.6.2[0m
+drwxr-xr-x 10 fzic wheel 4.0K Nov 16 14:09 [01;34mmsjsdiag.debugger-for-chrome-4.11.1[0m
+drwxr-xr-x  6 fzic wheel 4.0K Nov 16 14:03 [01;34mnaumovs.color-highlight-2.3.0[0m
+drwxr-xr-x  5 fzic wheel 4.0K Nov 16 13:49 [01;34mneilbrayfield.php-docblocker-1.6.0[0m
+drwxr-xr-x  6 fzic wheel 4.0K Nov 16 17:52 [01;34mpoga.theme-hybrid-operator-2.1.0[0m
+drwxr-xr-x  6 fzic wheel 4.0K Nov 17 07:43 [01;34msldobri.bunker-1.1.6[0m
+drwxr-xr-x  7 fzic wheel 4.0K Nov 16 14:09 [01;34mstreetsidesoftware.code-spell-checker-1.6.10[0m
+drwxr-xr-x  5 fzic wheel 4.0K Nov 16 18:52 [01;34mvscode-theme-generator-quick-start[0m
+drwxr-xr-x  6 fzic wheel 4.0K Nov 16 07:47 [01;34mvscodevim.vim-0.16.12[0m

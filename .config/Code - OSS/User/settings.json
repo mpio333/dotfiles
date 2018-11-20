@@ -1,0 +1,132 @@
+{
+    "vscode_custom_css.imports": [
+      //  "file:///home/fzic/.config/vscode/custom-style.css"
+    ],
+    "vscode_custom_css.policy": true,
+    "editor.fontSize": 15,
+    "editor.fontFamily": "'Fira Code Courgette','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 2,
+    "breadcrumbs.enabled": true,
+    "css.validate": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.tabSize": 2,
+    "editor.autoIndent": true,
+    "editor.insertSpaces": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.wordWrapColumn": 80,
+    "editor.wordWrap": "off",
+    "editor.detectIndentation": true,
+    "editor.rulers": [
+      80
+    ],
+    "files.associations": {
+      "*.inc": "php",
+      "*.module": "php",
+      "*.install": "php",
+      "*.theme": "php",
+      "*.tpl.php": "php",
+      "*.test": "php",
+      "*.php": "php"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "html.format.enable": true,
+    "html.format.wrapLineLength": 80,
+    "telemetry.enableTelemetry": false,
+
+    /* Empty Indent */
+    "emptyIndent.removeIndent": true,
+    "emptyIndent.highlightIndent": false,
+    "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
+
+    /* Crane php intellisense */
+    "crane.showStatusBarBugReportLink": false,
+
+    /* Ignore some D8 paths */
+    "crane.ignoredPaths": [
+      "sites/default/files/*",
+      "vendor/*",
+      "core/themes/*",
+      "core/tests/*",
+      "core/scripts/*",
+      "core/profiles/*",
+      "core/misc/*",
+      "core/assets/vendor/*",
+      "themes/*",
+      "sites/*"
+    ],
+    "php-docblocker.gap": true,
+    "php-docblocker.useShortNames": true,
+    "emmet.includeLanguages": {
+        "twig": "html"
+      },
+    "php.suggest.basic": false,
+    "workbench.startupEditor": "none",
+    "window.menuBarVisibility": "toggle",
+//     "editor.tokenColorCustomizations": {
+// "textMateRules": [
+//   {
+//     "scope": [
+//       // all comment types
+//       "comment",
+
+//       // true, false, null
+//       "constant.language",
+
+//       // import, from, export, default, return, if, for, break, continue, try, catch, finally,
+//       // throw, default, yield, await
+//       "keyword.control",
+
+//       // in, void, delete, instanceof
+//       "keyword.operator.expression",
+
+//       // debugger
+//       "keyword.other",
+
+//       // new
+//       "keyword.operator.new",
+
+//       // super, this, arguments
+//       "variable.language",
+
+//       // attributes in html, jsx, etc.
+//       "entity.other.attribute-name",
+
+//       // static, extends, async, private, public, implements
+//       // constructor, const, let, var, enum, class, function, interface
+//       // no explicit scopes for constructor, const, let, var
+//       // also no explicit scope for function without the arrow
+//       // therefore we enable all storage and explictly exclude the arrow in another scope
+//       "storage",
+
+//       // // no explicit scope for the eval keyword yet
+//       // // can be targeted with the scope below, but scope is too broad
+//       // "support.function",
+
+//       // // no explicit scope for the package keyword yet
+//       // // can be targeted with the scope below, but scope is too broad
+//       // "variable.other.readwrite",
+//     ],
+//     "settings": {
+//       "fontStyle": "italic",
+//       "font": "Courgette"
+//     }
+//   },
+//   {
+//     "scope": [
+//       // function keyword does not have an explicit scope without the arrow
+//       // therefore we explictly exclude the function arrow from being italicized
+//       "storage.type.function.arrow",
+//     ],
+//     "settings": {
+//       "fontStyle": ""
+//     }
+//   }
+// ]
+//       },
+      "editor.minimap.enabled": false,
+      "workbench.iconTheme": "dobri-theme-icons",
+      "workbench.colorTheme": "Generated theme"
+    }
