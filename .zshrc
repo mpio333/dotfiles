@@ -12,6 +12,7 @@ unsetopt beep
 # End of lines configured by zsh-newuser-install
 
 #Custom Options
+export PATH="$(du $HOME/.scripts/ | cut -f2 | tr '\n' ':')$PATH"
 export TERM="xterm-256color"
 export EDITOR='nvim'
 autoload -Uz compinit && compinit -i
