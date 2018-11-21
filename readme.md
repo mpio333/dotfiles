@@ -28,20 +28,10 @@ dotfiles push
 #####Install on new machine:
 
 ```
-git clone --bare https://bitbucket.org/durdn/cfg.git $HOME/.cfg
-function config {
-   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
-}
-mkdir -p .config-backup
-config checkout
-if [ $? = 0 ]; then
-  echo "Checked out config.";
-  else
-    echo "Backing up pre-existing dot files.";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
-fi;
-config checkout
+git clone --bare git@gitlab.com:fzic/dotfiles.git ~/.dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' #in .zshrc
 config config status.showUntrackedFiles no
+config checkout
 ```
 
 ### GTK and Icon Theme

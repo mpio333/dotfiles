@@ -48,6 +48,8 @@ source ~/.config/zsh/plugins/z/z.sh
 #Pure Prompt Theme
 fpath=( "$HOME/.config/zsh/themes/pure" $fpath )
 autoload -U promptinit; promptinit
+PURE_PROMPT_VICMD_SYMBOL=
+PURE_PROMPT_SYMBOL=
 prompt pure
 
 #Aliases

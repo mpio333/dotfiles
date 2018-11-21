@@ -189,12 +189,12 @@ smart_gaps on
 # Network manager applet
 #exec --no-startup-id nm-applet
 
-#exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift&
 
 exec_always --no-startup-id feh --bg-fill /home/fzic/Pictures/solid.jpg
 # exec --no-startup-id compton -f
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
-exec_always --no-startup-id xinput set-prop 12 281 1
+exec_always --no-startup-id xinput set-prop 12 287 1
 #exec --no-startup-id udiskie --no-notify --tray &
 
 assign [class="Firefox"] $ws2
