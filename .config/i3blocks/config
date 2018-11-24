@@ -31,7 +31,7 @@ markup=none
 # Date Time
 #
 [time]
-command=date +'%a %b %-d, %H:%M'
+command=date +'%H:%M'
 interval=5
 
 # Memory usage
@@ -68,7 +68,7 @@ interval=5
 #interval=10
 #separator=false
 
-[i3internet]
+[internet]
 #instance=wlp3s0
 interval=5
 #separator=false
@@ -106,8 +106,8 @@ signal=10
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
-label=
+[bat]
+# label=
 #label=⚡
 instance=1
 interval=30

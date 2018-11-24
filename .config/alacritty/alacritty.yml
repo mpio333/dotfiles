@@ -138,40 +138,75 @@ custom_cursor_colors: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
+
+# Colors (Oxide)
 colors:
   # Default colors
-
   primary:
-    background: '0x3c4c55'
-    foreground: '0xc5d4dd'
+    background: '0x212121'
+    foreground: '0xc0c5ce'
+    bright_foreground: '0xf3f4f5'
 
-  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x3c4c55'
-    cursor: '0x7fc1ca'
+    text: '0x212121'
+    cursor: '0xc0c5ce'
 
   # Normal colors
   normal:
-    black:   '0x3c4c55'
-    red:     '0xdf8c8c'
-    green:   '0xa8ce93'
-    yellow:  '0xdada93'
-    blue:    '0x83afe5'
-    magenta: '0x9a93e1'
-    cyan:    '0x7fc1ca'
-    white:   '0xc5d4dd'
+    black:   '0x212121'
+    red:     '0xe57373'
+    green:   '0xa6bc69'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xc0c5ce'
 
   # Bright colors
   bright:
-    black:   '0x899ba6'
-    red:     '0xf2c38f'
-    green:   '0xa8ce93'
-    yellow:  '0xdada93'
-    blue:    '0x83afe5'
-    magenta: '0xd18ec2'
-    cyan:    '0x7fc1ca'
-    white:   '0xe6eef3'
+    black:   '0x5c5c5c'
+    red:     '0xe57373'
+    green:   '0xa6bc69'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xf3f4f5'
+
+# Colors (Tomorrow Night Bright)
+# colors:
+  # Default colors
+
+  # primary:
+  #   background: '0x3c4c55'
+  #   foreground: '0xc5d4dd'
+  #
+  # # Colors the cursor will use if `custom_cursor_colors` is true
+  # cursor:
+  #   text: '0x3c4c55'
+  #   cursor: '0x7fc1ca'
+  #
+  # # Normal colors
+  # normal:
+  #   black:   '0x3c4c55'
+  #   red:     '0xdf8c8c'
+  #   green:   '0xa8ce93'
+  #   yellow:  '0xdada93'
+  #   blue:    '0x83afe5'
+  #   magenta: '0x9a93e1'
+  #   cyan:    '0x7fc1ca'
+  #   white:   '0xc5d4dd'
+  #
+  # # Bright colors
+  # bright:
+  #   black:   '0x899ba6'
+  #   red:     '0xf2c38f'
+  #   green:   '0xa8ce93'
+  #   yellow:  '0xdada93'
+  #   blue:    '0x83afe5'
+  #   magenta: '0xd18ec2'
+  #   cyan:    '0x7fc1ca'
+  #   white:   '0xe6eef3'
 
   # Indexed Colors
   #

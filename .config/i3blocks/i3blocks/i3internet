@@ -11,9 +11,9 @@ case $BLOCK_BUTTON in
 " ;;
 esac
 
-[ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="睊"
+[ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="郎"
 
-[ ! -n "${wifiicon+var}" ] && wifiicon=$(grep ^w /proc/net/wireless | awk '{ print "直", int($3 * 100 / 70) "%" }')
+[ ! -n "${wifiicon+var}" ] && wifiicon=$(grep ^w /proc/net/wireless | awk '{ print "蠟", int($3 * 100 / 70) "%" }')
 
 # printf "%s %s" "$wifiicon" "$(cat /sys/class/net/e*/operstate | sed "s/down/❎/;s/up/🌐/")"
 printf "%s %s" "$wifiicon"

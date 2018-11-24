@@ -39,6 +39,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'trevordmiller/nova-vim'
+Plugin 'daylerees/colour-schemes'
 
 
 " All of your Plugins must be added before the following line

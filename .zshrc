@@ -57,4 +57,10 @@ alias ls='ls --color -h --group-directories-first'
 alias ll='ls -l'
 alias vim=nvim
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ci3='vim ~/.config/i3/config'
+alias ccomp='vim ~/.config/compton.conf'
+alias cala='vim ~/.config/alacritty/alacritty.yml'
+alias cran='vim ~/.config/ranger/rc.conf'
 
+#Wal Colorscheme
+(cat ~/.cache/wal/sequences &)
