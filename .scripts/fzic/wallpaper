@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp -f $1 ~/.config/wallpaper
+feh --bg-fill ~/.config/wallpaper
+betterlockscreen -u ~/.config/wallpaper -r 1920x1080 -b 0.7
