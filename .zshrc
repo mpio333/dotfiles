@@ -15,6 +15,7 @@ unsetopt beep
 export PATH="$(du $HOME/.scripts/ | cut -f2 | tr '\n' ':')$PATH"
 export TERM="xterm-256color"
 export EDITOR='nvim'
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 export RANGER_LOAD_DEFAULT_RC=FALSE
 bindkey -e
@@ -37,7 +38,14 @@ setopt share_history
 #Plugins
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.config/zsh/plugins/zsh-colored-man-pages/colored-man-pages.plugin.zsh
 source ~/.config/zsh/plugins/z/z.sh
+
+# Functions for handling urls
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
 
 #Base16 Shell Theme
 # BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -61,6 +69,7 @@ alias ci3='vim ~/.config/i3/config'
 alias ccomp='vim ~/.config/compton.conf'
 alias cala='vim ~/.config/alacritty/alacritty.yml'
 alias cran='vim ~/.config/ranger/rc.conf'
+alias gdiff='git diff | diff-so-fancy'
 
 #Wal Colorscheme
 (cat ~/.cache/wal/sequences &)

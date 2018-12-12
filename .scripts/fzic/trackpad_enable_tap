@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# find id of trackpad device
+id=$(xinput | grep DELL | awk '{ print substr($6, 4, 2) }')
+# find id of tapping property
+prop=$(xinput list-props $id | grep "Tapping Enabled (" | awk '{ print substr($4, 2, 3)  }')
+# enable tapping on detected trackpad
+xinput set-prop $id $prop 1

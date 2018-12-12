@@ -175,7 +175,7 @@ bar {
 # State             Border  BG      Text
       focused_workspace   $transp $transp $blue
       active_workspace    $transp $transp $blue
-      inactive_workspace  $transp $transp $grey
+      inactive_workspace  $transp $transp $fg
       urgent_workspace    $transp $transp $red
       binding_mode        $transp $transp $yellow
   }
@@ -195,11 +195,12 @@ smart_borders on
 
 exec --no-startup-id redshift&
 exec --no-startup-id wal -Rn
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Minimalistic/minimalist_earth.png
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper
 exec --no-startup-id compton -b
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
-exec_always --no-startup-id xinput set-prop 16 287 1
-exec_always --no-startup-id xinput set-prop 12 287 1
+exec_always --no-starup-id trackpad_enable_tap
+#exec_always --no-startup-id xinput set-prop 16 293 1
+#exec_always --no-startup-id xinput set-prop 12 287 1
 #exec --no-startup-id udiskie --no-notify --tray &
 
 assign [class="Firefox"] $ws2
@@ -243,6 +244,9 @@ bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightnes
 bindsym XF86KbdBrightness exec light -Sk 0
 
+# Betterlockscreen
+bindsym $mod+shift+x exec betterlockscreen -l dimblur
+
 ## Base16 Material
 # Author: Nate Peterson
 #
@@ -270,7 +274,7 @@ bindsym XF86KbdBrightness exec light -Sk 0
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $fg     i3wm.color15 #f0f0f0
+set_from_resource $fg     i3wm.foreground #fff0f0
 set_from_resource $bg     i3wm.color0  #f0f0f0
 set_from_resource $bg2    i3wm.color8  #f0f0f0
 set_from_resource $red    i3wm.color1  #f0f0f0
@@ -284,7 +288,7 @@ set_from_resource $white  i3wm.color15 #f0f0f0
 set $transp #00000000
 
 # class                 border  backgr. text indicator child_border
-client.focused          $white     $bg     $fg  $bg       $white
+client.focused          $fg     $bg     $fg  $bg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $red     $bg     $fg  $bg       $red

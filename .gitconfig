@@ -1,3 +1,5 @@
 [user]
 	email = sistemastv.dm@gmail.com
 	name = fzic
+[core]
+	pager = diff-so-fancy
