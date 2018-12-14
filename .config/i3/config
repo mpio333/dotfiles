@@ -198,7 +198,7 @@ exec --no-startup-id wal -Rn
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper
 exec --no-startup-id compton -b
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
-exec_always --no-starup-id trackpad_enable_tap
+exec_always trackpad_enable_tap
 #exec_always --no-startup-id xinput set-prop 16 293 1
 #exec_always --no-startup-id xinput set-prop 12 287 1
 #exec --no-startup-id udiskie --no-notify --tray &
