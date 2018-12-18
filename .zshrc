@@ -21,6 +21,8 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 bindkey -e
 setopt inc_append_history
 setopt share_history
+#Emulate bash behaviour with *
+setopt nonomatch
 
 #Vi mode
 # function zle-line-init zle-keymap-select {
