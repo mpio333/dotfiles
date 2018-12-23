@@ -60,7 +60,27 @@ fpath=( "$HOME/.config/zsh/themes/pure" $fpath )
 autoload -U promptinit; promptinit
 PURE_PROMPT_VICMD_SYMBOL=
 PURE_PROMPT_SYMBOL=
-prompt pure
+# prompt pure
+prompt spaceship
+# SPACESHIP_CHAR_SYMBOL=
+SPACESHIP_CHAR_SYMBOL=
+SPACESHIP_CHAR_SUFFIX=⠀
+SPACESHIP_DIR_TRUNC=0
+SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_DIR_COLOR=12
+SPACESHIP_EXEC_TIME_ELAPSED=60
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  exec_time     # Execution time
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+  )
 
 #Aliases
 alias ls='ls --color -h --group-directories-first'
