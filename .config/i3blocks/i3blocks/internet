@@ -1,0 +1,41 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) $TERMINAL -e nmtui ;;
+	3) pgrep -x dunst >/dev/null && notify-send "<b>Internet module:</b>
+- Left click for \`nmtui\` for wifi access
+📡: no wifi connection
+📶: wifi connection with quality
+❎: no ethernet
+🌐: ethernet working
+" ;;
+esac
+
+if [ "$(cat /sys/class/net/w*/operstate)" = 'down' ]
+then 
+  wifiicon="郎"
+else 
+  strength=$(grep ^w /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+  case $strength in
+    100)
+      wifiicon="蠟"
+      ;;
+    [0-1]*)
+      wifiicon="冷"
+      ;;
+    [2-3]*)
+      wifiicon="爛"
+      ;;
+    [4-5]*)
+      wifiicon="嵐"
+      ;;
+    [6-7]*)
+      wifiicon="襤"
+      ;;
+    [8-9]*)
+      wifiicon="蠟"
+      ;;
+  esac
+fi
+
+echo $wifiicon

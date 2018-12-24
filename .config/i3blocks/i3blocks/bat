@@ -1,0 +1,62 @@
+#!/bin/sh
+# find battery id
+if [ $(acpi -b | grep 'Battery 0' | awk '{ print $3 }') == 'Unknown,' ]
+then
+  state=$(acpi -b | grep 'Battery 1' | awk '{ print $3 }')
+  percent=$(acpi -b | grep 'Battery 1' | awk '{ printf("%d", $4) }')
+else
+  state=$(acpi -b | grep 'Battery 0' | awk '{ print $3 }')
+  percent=$(acpi -b | grep 'Battery 0' | awk '{ printf("%d", $4) }')
+fi
+
+#if [ $percent -ne 100 ]
+#then
+  #percent=$(awk '{ print substr($percent, 1, length($percent) - 2) }')
+  #percent=$(acpi -b | grep 'Battery $id' | awk '{ print substr($4, 1, length($4) - 2) }')
+#fi
+
+case $percent in
+100)
+battery=""
+;;
+[0-9])
+battery=""
+;;
+[1-3]*)
+battery=""
+;;
+[4-6]*)
+battery=""
+;;
+[7-8]*)
+battery=""
+;;
+*)
+battery=""
+;;
+esac
+
+# if [ $percent <= 10 ]
+# then
+#   battery=""
+# elif [ $percent <= 35 ]
+# then
+#   battery=""
+# elif [ $percent <= 65 ]
+# then
+#   battery=""
+# elif [ $percent <= 90 ]
+# then
+#   battery=""
+# else
+#   battery=""
+# fi
+
+echo -n $battery
+
+if [ $state != 'Discharging,' ]
+then
+  echo " ";
+else
+  echo " $percent%"
+fi
