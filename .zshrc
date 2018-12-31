@@ -15,6 +15,9 @@ unsetopt beep
 export PATH="$(du $HOME/.scripts/ | cut -f2 | tr '\n' ':')$PATH"
 export TERM="xterm-256color"
 export EDITOR='nvim'
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+export READER="zathura"
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 export RANGER_LOAD_DEFAULT_RC=FALSE
