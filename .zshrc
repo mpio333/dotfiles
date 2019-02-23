@@ -95,6 +95,7 @@ alias ccomp='vim ~/.config/compton.conf'
 alias cala='vim ~/.config/alacritty/alacritty.yml'
 alias cran='vim ~/.config/ranger/rc.conf'
 alias gdiff='git diff | diff-so-fancy'
+alias sudo='sudo '
 
 #Wal Colorscheme
 (cat ~/.cache/wal/sequences &)
