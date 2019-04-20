@@ -26,6 +26,9 @@ setopt inc_append_history
 setopt share_history
 #Emulate bash behaviour with *
 setopt nonomatch
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
 
 #Vi mode
 # function zle-line-init zle-keymap-select {
