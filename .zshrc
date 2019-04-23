@@ -41,7 +41,8 @@ export GDK_DPI_SCALE=0.5
 # export KEYTIMEOUT=1
 
 #Fuzzy Finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 #Plugins
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -101,4 +102,15 @@ alias gdiff='git diff | diff-so-fancy'
 alias sudo='sudo '
 
 #Wal Colorscheme
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
+
+# fo [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fo() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

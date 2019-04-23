@@ -1,0 +1,10 @@
+[Added Associations]
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+video/quicktime=mpv.desktop;
+video/mp4=mpv.desktop;
+image/jpeg=sxiv.desktop;gimp.desktop;
+
+[Default Applications]
+image/jpeg=sxiv.desktop
+image/png=sxiv.desktop
+text/html=firefox.desktop

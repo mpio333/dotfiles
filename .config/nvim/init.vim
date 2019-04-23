@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -12,35 +11,26 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'Raimondi/delimitMate'
 Plugin 'itchyny/lightline.vim'
-Plugin 'chriskempson/base16-vim'
 Plugin 'chrisbra/unicode.vim'
 Plugin 'sheerun/vim-polyglot'
-" Plugin 'Shougo/deoplete.nvim'
-" Plugin 'wincent/command-t'
 Plugin 'Yggdroot/indentLine'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 Plugin 'JulesWang/css.vim'
-Plugin 'lifepillar/vim-solarized8'
 Plugin 'chr4/nginx.vim'
 Plugin 'chr4/sslsecure.vim'
 Plugin 'vim-utils/vim-husk'
 Plugin 'chrisbra/Colorizer'
-Plugin 'jacoborus/tender.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'lifepillar/vim-colortemplate'
-Plugin 'rakr/vim-two-firewatch'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'arcticicestudio/nord-vim'
 Plugin 'trevordmiller/nova-vim'
-Plugin 'daylerees/colour-schemes'
-
+Plugin 'vimwiki/vimwiki'
+Plugin 'Shougo/denite.nvim'
+Plugin 'neoclide/coc.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,17 +38,12 @@ filetype plugin indent on    " required
 
 map <C-n> :NERDTreeToggle<CR>
 
-" If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
   set termguicolors
 endif
 set encoding=UTF-8
 set fileencoding=utf-8
 syntax on
-" set background=dark
-" colorscheme neodark
-
-"highlight Normal ctermbg=NONE guibg=NONE
 
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 
@@ -103,7 +88,6 @@ set noshowmatch                       " don't jump between matching brackets
 if has('windows')
   set splitbelow                      " open horizontal splits below current window
 endif
-
 if has('vertsplit')
   set splitright                      " open vertical splits to the right of the current window
 endif
@@ -112,48 +96,16 @@ set wildmenu
 
 set belloff=all
 
-" if filereadable(expand("~/.vimrc_background"))
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-" endif
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
-" pangloss/vim-javascript
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-set conceallevel=1
-
 " IndentLines
 let g:indentLine_fileTypeExclude=['help']
 let g:indentLine_bufNameExclude=['NERD_tree.*']
 "let g:indentLine_char = '│'
-
-"Ruby
-let g:ruby_host_prog = '/home/fzic/.gem/ruby/2.5.0/bin/neovim-ruby-host'
-
-"UltiSnips
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 "Ctrl+H-J-K-L to move between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 
 "Better focus in active split - taken from Greg Hurrel https://github.com/wincent
 if exists('+colorcolumn')
@@ -177,15 +129,44 @@ augroup filetypedetect
   au BufRead,BufNewFile *.theme set filetype=php
 augroup END
 
-" let g:indentLine_concealcursor = 'inc'
-" let g:indentLine_conceallevel = 0
-
 let g:neodark#background = '#202020'
 colorscheme neodark
-" let &t_ZH="\e[3m"
-" let &t_ZR="\e[23m"
-" let &t_ZH="^[[3m"
-" let &t_ZR="^[[23m"
+
 highlight Comment cterm=italic gui=italic
 hi htmlArg gui=italic cterm=italic
 hi Type    gui=italic cterm=italic
+
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_list = [{'path': '~/Data/Wiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" === Denite shorcuts === "
+"   ;         - Browser currently open buffers
+"   <leader>t - Browse list of files in current directory
+"   <leader>g - Search current directory for occurences of given term and
+"   close window if no results
+"   <leader>j - Search current directory for occurences of word under cursor
+nmap ; :Denite buffer -split=floating -winrow=1<CR>
+nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
+nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
+nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+" Custom options for Denite
+"   auto_resize             - Auto resize the Denite window height automatically.
+"   prompt                  - Customize denite prompt
+"   direction               - Specify Denite window direction as directly below current pane
+"   winminheight            - Specify min height for Denite window
+"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
+"   prompt_highlight        - Specify color of prompt
+"   highlight_matched_char  - Matched characters highlight
+"   highlight_matched_range - matched range highlight
+let s:denite_options = {'default' : {
+\ 'auto_resize': 1,
+\ 'prompt': 'λ:',
+\ 'direction': 'rightbelow',
+\ 'winminheight': '10',
+\ 'highlight_mode_insert': 'Visual',
+\ 'highlight_mode_normal': 'Visual',
+\ 'prompt_highlight': 'Function',
+\ 'highlight_matched_char': 'Function',
+\ 'highlight_matched_range': 'Normal'
+\ }}

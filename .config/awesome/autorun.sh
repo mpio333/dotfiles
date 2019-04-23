@@ -14,3 +14,4 @@ bash ~/.scripts/fzic/trackpad_enable_tap
 run cmst
 #run connma-gtk --tray
 run thunar --daemon
+run compton -b
