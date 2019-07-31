@@ -1,0 +1,4 @@
+#!/bin/bash
+
+amixer -q sset Master toggle
+bash /home/hellall/.scripts/fzic/status

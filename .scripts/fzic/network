@@ -1,0 +1,16 @@
+#!/bin/bash
+NET=$(nmcli device status | grep -v disconnected | grep connected | awk '{print $2}')
+
+case $NET in
+ethernet)
+icon=""
+;;
+wifi)
+icon="直"
+;;
+*)
+icon="睊"
+;;
+esac
+
+echo -n $icon

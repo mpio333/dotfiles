@@ -127,7 +127,7 @@ font:
   # `WINIT_HIDPI_FACTOR=1.0 alacritty` to scale the font.
 
 # Display the time it takes to redraw each frame.
-render_timer: false
+debug.render_timer: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -239,7 +239,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.75
+background_opacity: 0.65
 
 # Mouse bindings
 #

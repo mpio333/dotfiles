@@ -1,0 +1,7 @@
+#!/bin/bash
+VOL=$(bash ~/.scripts/fzic/volume)
+LOCALTIME=$(date '+%a %H:%M')
+BAT="$(bash ~/.scripts/fzic/battery)"
+NET="$(bash ~/.scripts/fzic/network)"
+
+xsetroot -name "$NET $VOL $BAT $LOCALTIME"

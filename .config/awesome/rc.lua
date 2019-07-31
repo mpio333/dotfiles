@@ -17,7 +17,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+-- local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+-- local battery_widget = require("my-widgets.battery")
+local battery_widget = awful.widget.watch('bash -c "/home/hellall/.scripts/fzic/battery"', 30)
 local volume_widget = require("my-widgets.volume-widget.volume")
 
 -- {{{ Error handling

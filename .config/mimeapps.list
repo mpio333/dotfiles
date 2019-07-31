@@ -3,6 +3,11 @@ application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 video/quicktime=mpv.desktop;
 video/mp4=mpv.desktop;
 image/jpeg=sxiv.desktop;gimp.desktop;
+application/rtf=libreoffice-writer.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+text/plain=libreoffice-writer.desktop;org.gnome.gedit.desktop;
+audio/mp4=vlc.desktop;mpv.desktop;
+text/xml=org.pwmt.zathura.desktop;
 
 [Default Applications]
 image/jpeg=sxiv.desktop

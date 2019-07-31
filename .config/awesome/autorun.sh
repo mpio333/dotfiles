@@ -9,9 +9,10 @@ function run {
 
 setxkbmap -layout us -variant altgr-intl -option caps:escape
 
+feh --bg-fill ~/.config/wallpaper
 run redshift
 bash ~/.scripts/fzic/trackpad_enable_tap
-run cmst
-#run connma-gtk --tray
 run thunar --daemon
 run compton -b
+# run cmst
+run mpd

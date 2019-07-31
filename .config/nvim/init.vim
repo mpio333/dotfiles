@@ -1,4 +1,6 @@
 set nocompatible              " be iMproved, required
+filetype plugin on
+syntax on
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -139,6 +141,8 @@ hi Type    gui=italic cterm=italic
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_list = [{'path': '~/Data/Wiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_hl_headers=1
+let g:polyglot_disabled = ['markdown']
 
 " === Denite shorcuts === "
 "   ;         - Browser currently open buffers
