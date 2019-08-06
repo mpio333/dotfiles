@@ -14,4 +14,6 @@ do
 done &
 
 bash ~/.config/awesome/autorun.sh
+
 exec tdm --xstart
+# exec dwm
