@@ -1,0 +1,7 @@
+#!/bin/bash
+VOL=$(bash ~/.local/bin/volume)
+LOCALTIME=$(date '+%a %H:%M')
+BAT="$(bash ~/.local/bin/battery)"
+NET="$(bash ~/.local/bin/network)"
+
+xsetroot -name "$NET $VOL $BAT $LOCALTIME"

@@ -9,11 +9,11 @@ xrdb -merge ~/.Xresources
 
 while true
 do
-  bash ~/.scripts/fzic/status
+  bash ~/.local/bin/status
   sleep 30
 done &
 
-bash ~/.config/awesome/autorun.sh
+bash ~/.local/bin/autorun.sh
 
 exec tdm --xstart
 # exec dwm
