@@ -16,4 +16,3 @@ done &
 bash ~/.local/bin/autorun.sh
 
 exec tdm --xstart
-# exec dwm
