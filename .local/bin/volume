@@ -1,12 +1,12 @@
 #!/bin/sh
 
-state=$(amixer | awk '{ if (NR==5) print $6 }')
+state=$(amixer | grep "Left: P" | awk '{print $6}')
 
 if [ $state == '[off]' ]
 then
   echo '婢'
 else
-  volume=$(amixer | awk '{ if (NR==5) print substr($4, 2, length($4) - 2) }')
+  volume=$(amixer | grep "Left: P" | awk '{print substr($5, 2, length($5) - 3)}')
   case $volume in
     100)
       icon="墳"

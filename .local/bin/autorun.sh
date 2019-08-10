@@ -7,6 +7,8 @@ function run {
   fi
 }
 
+xrdb -merge ~/.Xresources
+
 setxkbmap -layout us -variant altgr-intl -option caps:escape
 
 feh --bg-fill ~/.config/wallpaper
@@ -15,4 +17,10 @@ bash ~/.local/bin/trackpad_enable_tap
 run thunar --daemon
 run compton -b
 # run cmst
-run mpd
+# run mpd
+
+while true
+do
+  bash ~/.local/bin/status
+  sleep 30
+done &
