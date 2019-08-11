@@ -1,0 +1,25 @@
+#!/bin/bash
+
+reboot=""
+poweroff=""
+lock=""
+sleep="⏾"
+
+locker="betterlockscreen -l dimblur"
+
+action=$(echo -e "$lock\n$poweroff\n$reboot\n$sleep" | dmenu -fn 'FuraCode Nerd Font-16')
+
+case $action in
+  $reboot)
+    reboot
+    ;;
+  $poweroff)
+    poweroff
+    ;;
+  $sleep)
+    systemctl suspend && $locker
+    ;;
+  $lock)
+    $locker
+    ;;
+esac
