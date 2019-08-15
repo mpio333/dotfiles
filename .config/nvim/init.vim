@@ -5,34 +5,37 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+"Basic
 Plugin 'VundleVim/Vundle.vim'
+"Functionality
 Plugin 'scrooloose/nerdtree'
-Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-surround'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tmhedberg/matchit'
-Plugin 'Raimondi/delimitMate'
-Plugin 'itchyny/lightline.vim'
-Plugin 'chrisbra/unicode.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'Yggdroot/indentLine'
-Plugin 'ervandew/supertab'
+Plugin 'Raimondi/delimitMate' "Autocomplete qutoes, parens..
+Plugin 'ervandew/supertab' "Codecomplete with tab in insert mode, local variables and functions
+Plugin 'godlygeek/tabular' "Align text, required by instant-markdown
+Plugin 'suan/vim-instant-markdown' "Live preview markdown in browser
+Plugin 'chrisbra/Colorizer' "Color colornames, preview
+Plugin 'tommcdo/vim-exchange' "Text exchange operator - cx
+Plugin 'easymotion/vim-easymotion' "Motion on speed! \\
+Plugin 'vimwiki/vimwiki'
+" Plugin 'neoclide/coc.nvim'
+"Syntax
+" Plugin 'sheerun/vim-polyglot'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'JulesWang/css.vim'
 Plugin 'chr4/nginx.vim'
 Plugin 'chr4/sslsecure.vim'
-Plugin 'vim-utils/vim-husk'
-Plugin 'chrisbra/Colorizer'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'lifepillar/vim-colortemplate'
+"Appearance
+Plugin 'itchyny/lightline.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'Yggdroot/indentLine' "Visual display of indent levels
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'KeitaNakamura/neodark.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'trevordmiller/nova-vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'Shougo/denite.nvim'
-Plugin 'neoclide/coc.nvim'
+Plugin 'junegunn/goyo.vim' "Writter mode
+Plugin 'junegunn/limelight.vim' "Highlight only focused, dim the rest
+Plugin 'airblade/vim-gitgutter' "Show git diff in gutter
+" Plugin 'trevordmiller/nova-vim' "Color scheme
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,24 +52,24 @@ syntax on
 
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 
-set relativenumber
+" set relativenumber
 set number                            " show line numbers in gutter
 
 set autoindent                  "keep indent on new lines
 set backspace=indent,start,eol  "allow unrestricted backspace in insert mode
 
-if has('linebreak')
-  let &showbreak='↪'                 " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
-  set breakindent                     " indent wrapped lines to match start
-  if exists('&breakindentopt')
-    set breakindentopt=shift:2        " emphasize broken lines by indenting them
-  endif
-endif
+" if has('linebreak')
+"   let &showbreak='↪'                 " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
+"   set breakindent                     " indent wrapped lines to match start
+"   if exists('&breakindentopt')
+"     set breakindentopt=shift:2        " emphasize broken lines by indenting them
+"   endif
+" endif
 
-if exists('+colorcolumn')
-  " Highlight up to 255 columns (this is the current Vim max) beyond 'textwidth'
-  let &l:colorcolumn='+' . join(range(0, 254), ',+')
-endif
+" if exists('+colorcolumn')
+"   " Highlight up to 255 columns (this is the current Vim max) beyond 'textwidth'
+"   let &l:colorcolumn='+' . join(range(0, 254), ',+')
+" endif
 
 set cursorline                        " highlight current line
 
@@ -101,7 +104,10 @@ set belloff=all
 " IndentLines
 let g:indentLine_fileTypeExclude=['help']
 let g:indentLine_bufNameExclude=['NERD_tree.*']
-"let g:indentLine_char = '│'
+" let g:indentLine_char = '│'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
 
 "Ctrl+H-J-K-L to move between splits
 nnoremap <C-J> <C-W><C-J>
@@ -110,21 +116,21 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "Better focus in active split - taken from Greg Hurrel https://github.com/wincent
-if exists('+colorcolumn')
-  autocmd BufEnter,FocusGained,VimEnter,WinEnter * if Should_colorcolumn() | let &l:colorcolumn='+' . join(range(0, 254), ',+') | endif
-  autocmd FocusLost,WinLeave * if Should_colorcolumn() | let &l:colorcolumn=join(range(1, 255), ',') | endif
-endif
-autocmd InsertLeave,VimEnter,WinEnter * if Should_cursorline() | setlocal cursorline | endif
-autocmd InsertEnter,WinLeave * if Should_cursorline() | setlocal nocursorline | endif
-let g:WincentColorColumnBlacklist = ['diff', 'undotree', 'nerdtree', 'qf']
-let g:WincentCursorlineBlacklist = ['command-t']
-let g:WincentMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
-function! Should_colorcolumn() abort
-  return index(g:WincentColorColumnBlacklist, &filetype) == -1
-endfunction
-function! Should_cursorline() abort
-  return index(g:WincentCursorlineBlacklist, &filetype) == -1
-endfunction
+" if exists('+colorcolumn')
+"   autocmd BufEnter,FocusGained,VimEnter,WinEnter * if Should_colorcolumn() | let &l:colorcolumn='+' . join(range(0, 254), ',+') | endif
+"   autocmd FocusLost,WinLeave * if Should_colorcolumn() | let &l:colorcolumn=join(range(1, 255), ',') | endif
+" endif
+" autocmd InsertLeave,VimEnter,WinEnter * if Should_cursorline() | setlocal cursorline | endif
+" autocmd InsertEnter,WinLeave * if Should_cursorline() | setlocal nocursorline | endif
+" let g:WincentColorColumnBlacklist = ['diff', 'undotree', 'nerdtree', 'qf']
+" let g:WincentCursorlineBlacklist = ['command-t']
+" let g:WincentMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
+" function! Should_colorcolumn() abort
+"   return index(g:WincentColorColumnBlacklist, &filetype) == -1
+" endfunction
+" function! Should_cursorline() abort
+"   return index(g:WincentCursorlineBlacklist, &filetype) == -1
+" endfunction
 
 "Interpret Drupal .theme file as php
 augroup filetypedetect
@@ -144,33 +150,9 @@ let g:vimwiki_list = [{'path': '~/Data/Wiki/',
 let g:vimwiki_hl_headers=1
 let g:polyglot_disabled = ['markdown']
 
-" === Denite shorcuts === "
-"   ;         - Browser currently open buffers
-"   <leader>t - Browse list of files in current directory
-"   <leader>g - Search current directory for occurences of given term and
-"   close window if no results
-"   <leader>j - Search current directory for occurences of word under cursor
-nmap ; :Denite buffer -split=floating -winrow=1<CR>
-nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-" Custom options for Denite
-"   auto_resize             - Auto resize the Denite window height automatically.
-"   prompt                  - Customize denite prompt
-"   direction               - Specify Denite window direction as directly below current pane
-"   winminheight            - Specify min height for Denite window
-"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-"   prompt_highlight        - Specify color of prompt
-"   highlight_matched_char  - Matched characters highlight
-"   highlight_matched_range - matched range highlight
-let s:denite_options = {'default' : {
-\ 'auto_resize': 1,
-\ 'prompt': 'λ:',
-\ 'direction': 'rightbelow',
-\ 'winminheight': '10',
-\ 'highlight_mode_insert': 'Visual',
-\ 'highlight_mode_normal': 'Visual',
-\ 'prompt_highlight': 'Function',
-\ 'highlight_matched_char': 'Function',
-\ 'highlight_matched_range': 'Normal'
-\ }}
+" vim-instant-markdown
+let g:instant_markdown_autostart = 0
+map <leader>md :InstantMarkdownPreview<CR>
+
+" Allows you to save files you opened without write permissions via sudo
+cmap w!! w !sudo tee %
