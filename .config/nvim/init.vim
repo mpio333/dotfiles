@@ -26,6 +26,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'JulesWang/css.vim'
 Plugin 'chr4/nginx.vim'
 Plugin 'chr4/sslsecure.vim'
+Plugin 'neomutt/neomutt.vim'
 "Appearance
 Plugin 'itchyny/lightline.vim'
 Plugin 'ryanoasis/vim-devicons'
