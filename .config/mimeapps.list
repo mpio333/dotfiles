@@ -97,4 +97,5 @@ video/x-ogm+ogg=video.desktop
 video/x-theora=video.desktop
 x-scheme-handler/magnet=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
+x-scheme-handler/tg=telegramdesktop.desktop
 

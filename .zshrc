@@ -65,13 +65,9 @@ zle -N self-insert url-quote-magic
 #Pure Prompt Theme
 fpath=( "$HOME/.config/zsh/themes/pure" $fpath )
 autoload -U promptinit; promptinit
-PURE_PROMPT_VICMD_SYMBOL=
-PURE_PROMPT_SYMBOL=
-# prompt pure
 prompt spaceship
-# SPACESHIP_CHAR_SYMBOL=
 SPACESHIP_CHAR_SYMBOL=
-SPACESHIP_CHAR_SUFFIX=⠀
+SPACESHIP_CHAR_SUFFIX= 
 SPACESHIP_DIR_TRUNC=0
 SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_DIR_COLOR=12
