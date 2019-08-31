@@ -21,7 +21,7 @@ Plugin 'easymotion/vim-easymotion' "Motion on speed! \\
 Plugin 'vimwiki/vimwiki'
 " Plugin 'neoclide/coc.nvim'
 "Syntax
-" Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'JulesWang/css.vim'
 Plugin 'chr4/nginx.vim'
@@ -36,7 +36,7 @@ Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'junegunn/goyo.vim' "Writter mode
 Plugin 'junegunn/limelight.vim' "Highlight only focused, dim the rest
 Plugin 'airblade/vim-gitgutter' "Show git diff in gutter
-" Plugin 'trevordmiller/nova-vim' "Color scheme
+Plugin 'trevordmiller/nova-vim' "Color scheme
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

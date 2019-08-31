@@ -9,7 +9,8 @@
 ! Oxide
 ! special
 *.foreground:   #c0c5ce
-*.background:   #212121
+*.background:   #202020
+! *.background:   #212121
 *.cursorColor:  #c0c5ce
 ! black
 *.color0:       #212121
