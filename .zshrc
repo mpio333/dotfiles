@@ -12,6 +12,7 @@ unsetopt beep
 # End of lines configured by zsh-newuser-install
 
 #Custom Options
+export LC_CTYPE=en_US.UTF-8
 export PATH=~/.local/bin/:$PATH
 export TERM="xterm-256color"
 export EDITOR='nvim'
