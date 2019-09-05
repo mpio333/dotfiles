@@ -19,6 +19,7 @@ Plugin 'chrisbra/Colorizer' "Color colornames, preview
 Plugin 'tommcdo/vim-exchange' "Text exchange operator - cx
 Plugin 'easymotion/vim-easymotion' "Motion on speed! \\
 Plugin 'vimwiki/vimwiki'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 " Plugin 'neoclide/coc.nvim'
 "Syntax
 Plugin 'sheerun/vim-polyglot'
