@@ -20,6 +20,8 @@ Plugin 'tommcdo/vim-exchange' "Text exchange operator - cx
 Plugin 'easymotion/vim-easymotion' "Motion on speed! \\
 Plugin 'vimwiki/vimwiki'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " Plugin 'neoclide/coc.nvim'
 "Syntax
 Plugin 'sheerun/vim-polyglot'
@@ -38,6 +40,10 @@ Plugin 'junegunn/goyo.vim' "Writter mode
 Plugin 'junegunn/limelight.vim' "Highlight only focused, dim the rest
 Plugin 'airblade/vim-gitgutter' "Show git diff in gutter
 Plugin 'trevordmiller/nova-vim' "Color scheme
+Plugin 'arcticicestudio/nord-vim' "Color scheme
+Plugin 'chriskempson/base16-vim'
+Plugin 'rakr/vim-two-firewatch'
+Plugin 'phanviet/vim-monokai-pro'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -141,6 +147,9 @@ augroup END
 
 let g:neodark#background = '#202020'
 colorscheme neodark
+" let base16colorspace=256
+" colorscheme base16-mpio
+hi Normal guibg=NONE ctermbg=NONE
 
 highlight Comment cterm=italic gui=italic
 hi htmlArg gui=italic cterm=italic

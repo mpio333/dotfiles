@@ -20,7 +20,6 @@
         <value type="int" value="7"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
-        <value type="int" value="10"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
@@ -53,6 +52,11 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="blueman"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="blueman-tray"/>
+        <value type="string" value="obs"/>
+        <value type="string" value="qopenvpn"/>
         <value type="string" value="skypeforlinux"/>
         <value type="string" value="vlc"/>
         <value type="string" value="thunar"/>
@@ -63,10 +67,9 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance2161;chromium.instance2448;chromium.instance3736;chromium.instance5972;chromium.instance6619;chromium.instance9073;cmus;vlc"/>
+      <property name="mpris-players" type="string" value="chrome.instance21025;chromium.instance101421;chromium.instance10359;chromium.instance10546;chromium.instance10766;chromium.instance107988;chromium.instance11005;chromium.instance1102;chromium.instance110359;chromium.instance113124;chromium.instance113249;chromium.instance1153;chromium.instance1157;chromium.instance115963;chromium.instance117786;chromium.instance1203;chromium.instance120678;chromium.instance1214;chromium.instance1217;chromium.instance1221;chromium.instance1225;chromium.instance1237;chromium.instance12442;chromium.instance1246;chromium.instance1276;chromium.instance1286;chromium.instance1288;chromium.instance129261;chromium.instance1302;chromium.instance1310;chromium.instance1312;chromium.instance1316;chromium.instance1325;chromium.instance132606;chromium.instance133473;chromium.instance1345;chromium.instance1352;chromium.instance1357;chromium.instance1364;chromium.instance1365;chromium.instance1367;chromium.instance1372;chromium.instance138356;chromium.instance14008;chromium.instance1402;chromium.instance14064;chromium.instance14068;chromium.instance1408;chromium.instance1440;chromium.instance1454;chromium.instance1460;chromium.instance1470;chromium.instance147039;chromium.instance1532;chromium.instance1535;chromium.instance154085;chromium.instance154540;chromium.instance1548;chromium.instance15614;chromium.instance157794;chromium.instance1603;chromium.instance1609;chromium.instance1634;chromium.instance163545;chromium.instance1639;chromium.instance16775;chromium.instance170391;chromium.instance1715;chromium.instance173465;chromium.instance1754;chromium.instance17684;chromium.instance177919;chromium.instance17797;chromium.instance178326;chromium.instance17945;chromium.instance1805;chromium.instance182982;chromium.instance1857;chromium.instance1859;chromium.instance1866;chromium.instance189392;chromium.instance18977;chromium.instance1902;chromium.instance19087;chromium.instance190941;chromium.instance204325;chromium.instance2079;chromium.instance209381;chromium.instance2108;chromium.instance21119;chromium.instance2114;chromium.instance214232;chromium.instance2161;chromium.instance21909;chromium.instance21913;chromium.instance22015;chromium.instance226960;chromium.instance227121;chromium.instance2302;chromium.instance233272;chromium.instance2448;chromium.instance25525;chromium.instance2562;chromium.instance259575;chromium.instance25987;chromium.instance263248;chromium.instance265959;chromium.instance27339;chromium.instance27451;chromium.instance28251;chromium.instance284957;chromium.instance28666;chromium.instance28812;chromium.instance2889;chromium.instance289853;chromium.instance290905;chromium.instance297946;chromium.instance306328;chromium.instance3070;chromium.instance30793;chromium.instance31219;chromium.instance319225;chromium.instance32030;chromium.instance32343;chromium.instance329303;chromium.instance34770;chromium.instance34975;chromium.instance356286;chromium.instance356863;chromium.instance36037;chromium.instance3736;chromium.instance3746;chromium.instance38505;chromium.instance387210;chromium.instance38792;chromium.instance3915;chromium.instance3989;chromium.instance406628;chromium.instance40795;chromium.instance40915;chromium.instance4131;chromium.instance4159;chromium.instance43231;chromium.instance44098;chromium.instance44327;chromium.instance44669;chromium.instance4615;chromium.instance4619;chromium.instance46476;chromium.instance4712;chromium.instance47149;chromium.instance47567;chromium.instance4831;chromium.instance5151;chromium.instance5186;chromium.instance5448;chromium.instance55594;chromium.instance55999;chromium.instance5794;chromium.instance58860;chromium.instance5972;chromium.instance5999;chromium.instance62824;chromium.instance6619;chromium.instance72287;chromium.instance7517;chromium.instance76234;chromium.instance76568;chromium.instance7673;chromium.instance82361;chromium.instance8379;chromium.instance8456;chromium.instance869;chromium.instance87003;chromium.instance87358;chromium.instance8974;chromium.instance9073;chromium.instance92023;chromium.instance9414;chromium.instance946;chromium.instance97182;chromium.instance98122;chromium.instance9823;chromium.instance98754;chromium.instance99540;chromium.instance99622;cmus;vlc"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
-    <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>

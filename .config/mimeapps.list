@@ -19,7 +19,7 @@ audio/m4a=video.desktop
 audio/mp1=video.desktop
 audio/mp2=video.desktop
 audio/mp3=video.desktop
-audio/mp4=video.desktop
+audio/mp4=video.desktop;
 audio/mpeg=video.desktop
 audio/mpegurl=video.desktop
 audio/mpg=video.desktop
@@ -49,7 +49,6 @@ audio/x-tta=video.desktop
 audio/x-vorbis+ogg=video.desktop
 audio/x-wav=video.desktop
 audio/x-wavpack=video.desktop
-audio/mp4=video.desktop;
 image/bmp=img.desktop
 image/eps=pdf.desktop
 image/gif=img.desktop
@@ -99,3 +98,9 @@ x-scheme-handler/magnet=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
 x-scheme-handler/tg=telegramdesktop.desktop
 
+[Added Associations]
+x-scheme-handler/mailto=exo-mail-reader.desktop;
+video/x-matroska=vlc.desktop;
+application/octet-stream=thunar-settings.desktop;
+video/mp4=vlc.desktop;
+audio/mpeg=mpv.desktop;vlc.desktop;

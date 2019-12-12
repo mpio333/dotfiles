@@ -27,9 +27,16 @@ setopt inc_append_history
 setopt share_history
 #Emulate bash behaviour with *
 setopt nonomatch
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
+# export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# export GDK_SCALE=2
+# export GDK_DPI_SCALE=0.5
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland-egl
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XDG_SESSION_TYPE=wayland
+export ECORE_EVAS_ENGINE=wayland_egl
+export ELM_ENGINE=wayland_egl
+export SDL_VIDEODRIVER=wayland
 
 #Vi mode
 # function zle-line-init zle-keymap-select {
@@ -58,10 +65,10 @@ autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
 #Base16 Shell Theme
-# BASE16_SHELL="$HOME/.config/base16-shell/"
-# [ -n "$PS1" ] && \
-#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-#         eval "$("$BASE16_SHELL/profile_helper.sh")"
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 #Pure Prompt Theme
 fpath=( "$HOME/.config/zsh/themes/pure" $fpath )

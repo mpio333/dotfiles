@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash ~/.local/bin/autorun.sh
+# bash ~/.local/bin/autorun.sh
