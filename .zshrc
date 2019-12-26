@@ -6,14 +6,14 @@ compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=10000
+HISTSIZE=10000
+SAVEHIST=20000
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 
 #Custom Options
 export LC_CTYPE=en_US.UTF-8
-export PATH=~/.local/bin/:$PATH
+export PATH=~/.local/bin/:~/.cargo/bin/:$PATH
 export TERM="xterm-256color"
 export EDITOR='nvim'
 export TERMINAL="alacritty"
@@ -57,6 +57,7 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/plugins/zsh-colored-man-pages/colored-man-pages.plugin.zsh
 source ~/.config/zsh/plugins/z/z.sh
+source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
 
 # Functions for handling urls
 autoload -Uz bracketed-paste-magic

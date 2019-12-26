@@ -29,7 +29,7 @@ output * bg ~/Data/Pictures/Wallpapers/Art/lion_art_vector_122213_1920x1080.jpg 
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 scale 1.6
+output eDP-1 scale 1.33
 
 ### Idle configuration
 #
@@ -142,8 +142,8 @@ output eDP-1 scale 1.6
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+minus splitv
+    bindsym $mod+backslash splith
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -168,11 +168,11 @@ output eDP-1 scale 1.6
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+Shift+plus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    bindsym $mod+plus scratchpad show
 #
 # Resizing containers:
 #
@@ -230,8 +230,6 @@ exec thunar --daemon
 exec blueman-applet
 exec redshift
 exec bash ~/.local/bin/trackpad_enable_tap
-exec "env MOZ_ENABLE_WAYLAND=1 firefox"
-assign [app_id="firefox"] → 2
 
 default_border none
 
@@ -246,3 +244,5 @@ bindsym XF86MonBrightnessDown exec sudo light -U 10
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
+gaps inner 16

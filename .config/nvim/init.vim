@@ -167,3 +167,6 @@ map <leader>md :InstantMarkdownPreview<CR>
 
 " Allows you to save files you opened without write permissions via sudo
 cmap w!! w !sudo tee %
+
+" Use urlview to choose and open an url:
+noremap <leader>u :w \| startinsert \| term urlview %<cr>
