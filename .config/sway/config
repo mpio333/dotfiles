@@ -228,7 +228,7 @@ exec_always {
 }
 exec thunar --daemon
 exec blueman-applet
-exec redshift
+exec redshift -m wayland
 exec bash ~/.local/bin/trackpad_enable_tap
 
 default_border none

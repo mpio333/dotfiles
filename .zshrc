@@ -103,3 +103,6 @@ alias gdiff='git diff | diff-so-fancy'
 alias sudo='sudo '
 
 test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
+
+# opam configuration
+test -r /home/hellall/.opam/opam-init/init.zsh && . /home/hellall/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
